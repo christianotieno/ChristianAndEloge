@@ -1,0 +1,22 @@
+function beautifulDays(i, j, k) {
+
+    function reverseNumber(num) {
+        let divident = num;
+        let revNum = "";
+        while (divident != 0) {
+            let reminder = divident % 10;
+            revNum += reminder;
+            divident = Math.floor(divident / 10);
+        }
+        return revNum;
+    }
+
+    let count = 0;
+    for (let n = i; n <= j; n++) {
+        if (Math.abs(n - reverseNumber(n)) % k === 0) {
+            count ++;
+        }
+    }
+    return count;
+
+}
